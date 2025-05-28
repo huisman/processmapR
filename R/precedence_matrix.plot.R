@@ -23,7 +23,6 @@ plot.process_matrix <- function(x, ...) {
 	rel_n_cases <- NULL
 	if(perspective == "frequency") {
 		if(type == "absolute") {
-
 			x %>%
 				ggplot(aes(antecedent, consequent)) +
 				geom_raster(aes(fill = n)) +
@@ -33,7 +32,6 @@ plot.process_matrix <- function(x, ...) {
 				theme_light() +
 				theme(axis.text.x = element_text(angle = 45, hjust = 1)) -> p
 			p <- p + labs(x = "Antecedent", y = "Consequent")
-
 
 			return(p)
 		} else if(type == "relative") {
@@ -46,7 +44,6 @@ plot.process_matrix <- function(x, ...) {
 				coord_flip() +
 				theme(axis.text.x = element_text(angle = 45, hjust = 1))-> p
 			p <- p + labs(x = "Antecedent", y = "Consequent")
-
 
 			return(p)
 		} else if(type == "relative-case") {
@@ -86,6 +83,7 @@ plot.process_matrix <- function(x, ...) {
 					  strip.background = element_blank(),
 					  strip.text = element_blank())-> p
 			p <- p + labs(x = "Antecedent", y = "Consequent")
+
 			return(p)
 		} else if(type == "relative-consequent") {
 			x %>%
